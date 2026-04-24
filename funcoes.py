@@ -17,7 +17,17 @@ def guardar_dado(lista_rolados, lista_guardados, ind):
     resultado = [lista_rolados2, lista_guardados2]
     return resultado
       
+def remover_dado(lista_rolados, lista_guardados, ind):
+    lista_rolados2 = []
+    lista_guardados2 = []
 
+    lista_rolados2 = lista_rolados
+    lista_rolados2.append(lista_guardados[ind])
+    del lista_guardados[ind]
+    lista_guardados2 = lista_guardados
+
+    resultado = [lista_rolados2, lista_guardados2]
+    return resultado
 
 
 
