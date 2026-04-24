@@ -29,5 +29,21 @@ def remover_dado(lista_rolados, lista_guardados, ind):
     resultado = [lista_rolados2, lista_guardados2]
     return resultado
 
+def calcula_pontos_regra_simples(lista_dados):
+    soma = {}
+    for i in range(1, 7):
+        soma[i] = 0
+        
+    for face in lista_dados:
+        if  soma[face] == 0:
+             soma[face] = face 
+        else: 
+            soma[face] += face 
+    return soma
+
+
+
+
+        
 
 
