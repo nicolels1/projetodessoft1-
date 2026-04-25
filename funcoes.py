@@ -77,6 +77,35 @@ def  calcula_pontos_sequencia_baixa(dados):
         return 15 
     else:
         return 0
+    
+def  calcula_pontos_sequencia_alta(dados): 
+    sequencia_alta = False 
+    if len(dados) >= 4:
+        sequencia = []
+        copia_dados = []
+        for num in dados:
+            copia_dados.append(num)
+
+        while len(copia_dados) != 0:
+            menor_num = 10000
+            for num in copia_dados:
+                if num <= menor_num:
+                    menor_num = num
+            
+            if menor_num not in sequencia:
+                sequencia.append(menor_num)
+                
+            copia_dados.remove(menor_num)
+
+        for i in range(len(sequencia) - 4):
+            if sequencia[i + 1] == sequencia[i] + 1 and sequencia[i + 2] == sequencia[i] + 2 and sequencia[i + 3] == sequencia[i] + 3 and sequencia[i + 4] == sequencia[i] + 4:
+                sequencia_alta = True
+                break
+
+    if sequencia_alta:
+        return 30
+    else:
+        return 0
         
 
 
