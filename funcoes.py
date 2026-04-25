@@ -49,7 +49,34 @@ def calcula_pontos_soma(dados):
 
     return soma
 
-    
+def  calcula_pontos_sequencia_baixa(dados): 
+    sequencia_baixa = False 
+    if len(dados) >= 4:
+        sequencia = []
+        copia_dados = []
+        for num in dados:
+            copia_dados.append(num)
+
+        while len(copia_dados) != 0:
+            menor_num = 10000
+            for num in copia_dados:
+                if num <= menor_num:
+                    menor_num = num
+            
+            if menor_num not in sequencia:
+                sequencia.append(menor_num)
+
+            copia_dados.remove(menor_num)
+
+        for i in range(len(sequencia) - 3):
+            if sequencia[i + 1] == sequencia[i] + 1 and sequencia[i + 2] == sequencia[i] + 2 and sequencia[i + 3] == sequencia[i] + 3:
+                sequencia_baixa = True
+                break
+
+    if sequencia_baixa:
+        return 15 
+    else:
+        return 0
         
 
 
