@@ -107,8 +107,34 @@ def  calcula_pontos_sequencia_alta(dados):
     else:
         return 0
         
+def calcula_pontos_full_house(dados):
 
+    a_quant = 0
+    b_quant = 0 
+    teste = 0
+    soma = 0
+    a = dados[0]
+    i = 0
+    while i < len(dados):
+        if dados[i] == a:
+            a_quant += 1 
 
+        if dados[i] != a and teste == 0 :
+            b = dados[i]
+            j = 1
+            while j < len(dados):
+                if dados[j] == b:
+                    b_quant += 1 
+                j += 1 
+            teste = 1 
         
+        i +=1 
+
+    if (a_quant == 2 and b_quant == 3) or (a_quant == 3 and b_quant == 2):
+        for face in dados:
+            soma += face 
+        return soma 
+    else:
+        return soma 
 
 
