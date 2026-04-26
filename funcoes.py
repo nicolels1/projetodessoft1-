@@ -157,7 +157,19 @@ def calcula_pontos_quadra(dados):
         
     return soma
 
+def calcula_pontos_quina(dados):
+    contagem = 0 
+    if len(dados) < 4:
+        return 0
     
+    quant = {}
+    for i in range(1, 7):
+        quant[i] = 0
 
-
-
+    
+    for face in dados:
+        quant[face] +=1 
+        if quant[face] == 5:
+            return 50 
+               
+    return 0
