@@ -137,4 +137,27 @@ def calcula_pontos_full_house(dados):
     else:
         return soma 
 
+def calcula_pontos_quadra(dados):
+    soma = 0 
+    contagem = 0 
+    if len(dados) < 4:
+        return 0
+    
+    quant = {}
+    for i in range(1, 7):
+        quant[i] = 0
+
+    
+    for face in dados:
+        quant[face] +=1 
+        if quant[face] == 4:
+            for face in dados:
+                soma += face 
+            return soma 
+        
+    return soma
+
+    
+
+
 
