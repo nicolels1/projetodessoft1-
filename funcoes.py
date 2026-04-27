@@ -185,10 +185,6 @@ def calcula_pontos_regra_avancada(dados):
     pontos["sequencia_baixa"] = calcula_pontos_sequencia_baixa(dados)
 
     return pontos
-
-print('oi')
-
-print(calcula_pontos_regra_avancada([4, 4, 4, 4, 4]))
     
 
     
