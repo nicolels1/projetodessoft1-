@@ -173,3 +173,18 @@ def calcula_pontos_quina(dados):
             return 50 
                
     return 0
+
+def calcula_pontos_regra_avancada(dados):
+    pontos = {}
+    
+    pontos["cinco_iguais"] = calcula_pontos_quina(dados)
+    pontos["full_house"] = calcula_pontos_full_house(dados)
+    pontos["quadra"] = calcula_pontos_quadra(dados)
+    pontos["sem_combinacao"] = calcula_pontos_soma(dados)
+    pontos["sequencia_alta"] = calcula_pontos_sequencia_alta(dados)
+    pontos["sequencia_baixa"] = calcula_pontos_sequencia_baixa(dados)
+
+    return pontos
+    
+
+    
